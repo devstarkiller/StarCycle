@@ -2,100 +2,175 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>StarCycle💫 - Pools</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarCycle - Pools</title>
   <style>
-    body { 
-      background: #c0c0c0; 
-      font-family: 'MS Sans Serif', Arial; 
-      margin: 0; 
-      padding: 20px; 
-      display: flex; 
-      justify-content: center; 
-      align-items: center; 
-      min-height: 100vh; 
+    body {
+      background-color: #008080; /* Win95 teal background */
+      font-family: 'MS Sans Serif', Arial, sans-serif;
+      font-size: 12px;
+      color: #000;
+      margin: 0;
+      padding: 20px;
     }
-    .window { 
-      background: #fff; 
-      border: 2px solid #000; 
-      padding: 10px; 
-      width: 700px; /* Wider for two columns */
+    .container {
+      background-color: #c0c0c0; /* Win95 gray */
+      border: 1px solid #000;
+      padding: 10px;
+      max-width: 800px;
+      margin: 0 auto;
+      box-shadow: 2px 2px 0 #000, -2px -2px 0 #fff, 2px -2px 0 #000, -2px 2px 0 #000;
     }
-    .title-bar { 
-      background: #000080; 
-      color: #fff; 
-      padding: 5px; 
-      font-weight: bold; 
-      text-align: center;
+    h1 {
+      background-color: #000080; /* Win95 navy blue title bar */
+      color: #fff;
+      padding: 5px;
+      margin: 0 0 10px 0;
+      font-size: 14px;
+      border: 1px solid #000;
+      box-shadow: inset -1px -1px 0 #fff, inset 1px 1px 0 #808080;
     }
     .columns {
       display: flex;
       justify-content: space-between;
     }
     .column {
-      width: 48%; /* Slightly less than half to fit padding */
-      padding: 5px;
+      width: 48%;
     }
     .pool {
+      background-color: #fff;
       border: 1px solid #000;
-      padding: 5px;
+      padding: 10px;
       margin-bottom: 10px;
-      background: #fff;
+      box-shadow: 1px 1px 0 #000;
     }
-    p { margin: 5px 0; }
-    .btn { 
-      background: #c0c0c0; 
-      border: 2px outset #fff; 
-      padding: 5px 10px; 
-      cursor: pointer; 
-      display: block; 
-      margin: 10px auto; 
+    .pool p {
+      margin: 5px 0;
     }
-    .btn:active { 
-      border-style: inset; 
+    .countdown {
+      color: #000080; /* Navy blue */
+      font-weight: bold;
+      background-color: #c0c0c0; /* Light gray */
+      padding: 2px 5px;
+      border: 1px solid #000;
+      display: inline-block;
     }
   </style>
 </head>
 <body>
-  <div class="window">
-    <div class="title-bar">StarCycle💫 Pools</div>
+  <div class="container">
+    <h1>StarCycle - Pools</h1>
     <div class="columns">
       <div class="column">
         <div class="pool">
           <p><b>Max Faith Pool 1</b></p>
           <p>Participants: 7</p>
           <p>Slots Left: 3</p>
-          <p>Stars Earned: 0</p>
+          <p>7STAR Deposited: 0.7</p>
+          <p>7STAR Earned: 0</p>
           <p>Unclaimed 7STAR Rewards: 0 RAPR</p>
           <p>RAPR Staked: 0 RAPR</p>
-          <p>Days to Next Star: 52</p>
+          <p>Days to Next Star: <span class="countdown" data-cycle="1" data-7star="1"></span></p>
         </div>
         <div class="pool">
-            <p><b>Max Faith Pool 2</b></p>
-            <p>Participants: 1</p>
-            <p>Slots Left: FULL </p>
-            <p>7STAR Deposited: 3</p>
-            <p>Stars Earned: 0</p>
-            <p>Unclaimed 7STAR Rewards: 0 RAPR</p>
-            <p>RAPR Staked: 0 RAPR</p>
-            <p>Days to Next Star: 21</p>
+          <p><b>Max Faith Pool 2</b></p>
+          <p>Participants: 1</p>
+          <p>Slots Left: FULL</p>
+          <p>7STAR Deposited: 3</p>
+          <p>7STAR Earned: 0</p>
+          <p>RAPR Accrued: 0 RAPR</p>
+          <p>RAPR Staked: 0 RAPR</p>
+          <p>Days to Next Star: <span class="countdown" data-cycle="1" data-7star="3"></span></p>
         </div>
-        <!-- Add more Max Faith Pools here -->
       </div>
       <div class="column">
         <div class="pool">
           <p><b>Standard Pool 1</b></p>
           <p>Participants: 2</p>
           <p>Slots Left: 8</p>
-          <p>Stars Earned: 0</p>
+          <p>7STAR Deposited: 0.2</p>
+          <p>7STAR Earned: 0</p>
           <p>Unclaimed 7STAR Rewards: 0 RAPR</p>
           <p>RAPR Staked: 0 RAPR</p>
-          <p>Days to Next Star: 52</p>
+          <p>Days to Next Star: <span class="countdown" data-cycle="2" data-type="standard"></span></p>
         </div>
-        <!-- Add more Standard Pools here -->
+        <div class="pool">
+          <p><b>Standard Pool 2</b></p>
+          <p>Participants: 0</p>
+          <p>Slots Left: 10</p>
+          <p>7STAR Deposited: 0</p>
+          <p>7STAR Earned: 0</p>
+          <p>Unclaimed 7STAR Rewards: 0 RAPR</p>
+          <p>RAPR Staked: 526 RAPR</p>
+          <p>Days to Next Star: <span class="countdown" data-cycle="3" data-type="standard"></span></p>
+        </div>
       </div>
     </div>
-    <a href="index.html"><button class="btn">Back</button></a>
   </div>
+
+  <script>
+    function calculateCycleDuration(num7Star) {
+      // Formula: D_n = 70.785 / n * min(0.8 + 0.05 * (n-1), 1)
+      const factor = Math.min(0.8 + 0.05 * (num7Star - 1), 1);
+      return (70.785 / num7Star) * factor;
+    }
+
+    function updateCountdown() {
+      const now = new Date();
+      const startDate = new Date("2025-03-20T00:00:00Z"); // Start date for both pools
+
+      document.querySelectorAll('.countdown').forEach(span => {
+        const cycle = parseInt(span.getAttribute('data-cycle'));
+        let num7Star = parseInt(span.getAttribute('data-7star')) || 1; // Default to 1 for Standard Pools until implemented
+
+        // Calculate total days up to the start of the current cycle
+        let totalDays = 0;
+        for (let i = 1; i < cycle; i++) {
+          totalDays += calculateCycleDuration(i);
+        }
+
+        // Determine cycle duration for the current number of 7STAR
+        const cycleDuration = calculateCycleDuration(num7Star);
+
+        // Calculate end date for the current cycle
+        const cycleStartDate = new Date(startDate.getTime() + totalDays * 24 * 60 * 60 * 1000);
+        const endDate = new Date(cycleStartDate.getTime() + cycleDuration * 24 * 60 * 60 * 1000);
+
+        // If before the start date, count down to startDate
+        let diff;
+        let displayText;
+        if (now < startDate) {
+          diff = startDate - now;
+          displayText = "Starts in: ";
+        } else {
+          diff = endDate - now;
+          displayText = "";
+        }
+
+        if (diff < 0) {
+          // Cycle completed, increment cycle and 7STAR (for Max Faith only for now)
+          if (!span.getAttribute('data-type')) { // Only for Max Faith pools
+            span.setAttribute('data-cycle', cycle + 1);
+            span.setAttribute('data-7star', num7Star + 1);
+          }
+          return updateCountdown(); // Recalculate for the new cycle
+        }
+
+        // Convert to days, hours, minutes, seconds
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        diff -= days * (1000 * 60 * 60 * 24);
+        const hours = Math.floor(diff / (1000 * 60 * 60));
+        diff -= hours * (1000 * 60 * 60);
+        const minutes = Math.floor(diff / (1000 * 60));
+        diff -= minutes * (1000 * 60);
+        const seconds = Math.floor(diff / 1000);
+
+        span.textContent = `${displayText}${days}d ${hours}h ${minutes}m ${seconds}s`;
+      });
+    }
+
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
-​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​

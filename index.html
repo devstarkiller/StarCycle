@@ -32,6 +32,7 @@
       color: #000080;
       padding: 5px 10px; 
       cursor: pointer; 
+      text-decoration: none; /* Remove underline from buttons */
     }
     .btn:active { 
       border-style: inset; 
@@ -48,6 +49,20 @@
       padding: 5px; 
       box-sizing: border-box; 
       font-family: 'MS Sans Serif', Arial; 
+      border: 2px inset #000; /* Win95-style box */
+      background: #fff; /* Match wallet-box background */
+    }
+    .clickable-address {
+      color: #0000A0; /* Muted blue to suggest clickability */
+      text-decoration: none; /* No underline by default */
+      cursor: pointer; /* Hand cursor on hover for the link */
+    }
+    .clickable-address:hover {
+      color: #0000FF; /* Slightly brighter blue on hover */
+      text-decoration: underline; /* Subtle underline on hover */
+    }
+    .clickable-address .wallet-input {
+      cursor: pointer; /* Ensure the input itself shows a hand cursor */
     }
     .telegram-box { 
       width: 480px; 
@@ -55,6 +70,18 @@
       border: 1px solid #000; 
       padding: 5px; 
       background: #ffffcc; /* Light yellow for emphasis */ 
+    }
+    .telegram-box p {
+      margin: 0; /* Remove default margin for consistent spacing */
+    }
+    .telegram-link {
+      color: #0000A0; /* Muted blue to suggest clickability, matching starstaking.sol */
+      text-decoration: none; /* No underline by default */
+      cursor: pointer; /* Hand cursor on hover */
+    }
+    .telegram-link:hover {
+      color: #0000FF; /* Slightly brighter blue on hover */
+      text-decoration: underline; /* Subtle underline on hover */
     }
   </style>
 </head>
@@ -64,10 +91,12 @@
     <p>Welcome to StarCycle - Stake Stardust, Spin Stars, Stack RAPR</p>
     <div class="wallet-box">
       <p>Send 0.1+ 7STAR (in 0.1 steps) to:</p>
-      <input type="text" value="starstaking.sol" readonly class="wallet-input">
+      <a href="https://solscan.io/account/6E1WyS4Q9qdaBbUuCumtgcGCUx3Vjk4o2FpQ4MDyNjmB#transfers" class="clickable-address" target="_blank">
+        <input type="text" value="starstaking.sol" readonly class="wallet-input">
+      </a>
     </div>
     <div class="telegram-box">
-      <p>AFTER DEPOSIT, MSG @DEVSTARKILLER ON TELEGRAM TO JOIN YOUR POOL CHAT</p>
+      <p>AFTER DEPOSIT, MSG <a href="https://t.me/devstarkiller" class="telegram-link" target="_blank">@DEVSTARKILLER</a> ON TELEGRAM TO JOIN YOUR POOL CHAT</p>
     </div>
     <p>Last Updated: March 12, 2025</p>
     <a href="pools.html"><button class="btn">View Pools</button></a>
@@ -75,4 +104,3 @@
   </div>
 </body>
 </html>
-​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​​

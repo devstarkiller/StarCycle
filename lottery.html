@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>7STAR Lottery 💫</title>
+  <link rel="stylesheet" href="css/windows95.css">
+  <style>
+    /* Lottery-specific styles */
+    .lottery-card {
+      margin-bottom: 15px;
+      border: 1px solid #000;
+    }
+    .lottery-header {
+      background-color: #000080;
+      color: #fff;
+      padding: 5px;
+      font-weight: bold;
+    }
+    .lottery-body {
+      padding: 8px;
+      background-color: #f0f0f0;
+    }
+    .status-open {
+      color: #008000; /* Green */
+    }
+    .status-full {
+      color: #FF0000; /* Red */
+    }
+    .tab-container {
+      display: flex;
+      margin-bottom: 10px;
+    }
+    .tab {
+      background-color: #c0c0c0;
+      border: 2px outset #000;
+      padding: 5px 15px;
+      cursor: pointer;
+      margin-right: 5px;
+      color: #000080;
+    }
+    .tab.active {
+      background-color: #f0f0f0;
+      border-bottom: 2px inset #000;
+      border-right: 2px inset #000;
+      border-top: 2px outset #000;
+      border-left: 2px outset #000;
+    }
+    .tab:hover {
+    background-color: #d3d3d3; /* Lighter gray on hover */
+  }
+    .tab-content {
+      display: none;
+    }
+    .tab-content.active {
+      display: block;
+    }
+    .history-item {
+      border-bottom: 1px solid #ccc;
+      padding: 5px 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="title-bar">7STAR Lottery 💫</div>
+
+    <div id="wallet-section" class="wallet-info">
+      <div id="not-connected">
+        <p>Connect your wallet to participate in the lottery : NOT LIVE YET! DO NOT USE!</p>
+        <button class="btn" id="connect-wallet">Connect Wallet</button>
+      </div>
+      <div id="connected" style="display: none;">
+        <p>Connected Wallet:</p>
+        <div class="wallet-address" id="wallet-address"></div>
+        <p>7STAR Balance: <span id="token-balance">0.00</span></p>
+      </div>
+    </div>
+
+    <div id="notification" class="notification" style="display: none;">
+      Transaction submitted! Waiting for confirmation...
+    </div>
+
+    <div class="tab-container">
+        <div class="tab active" data-tab="active-lotteries">Active Lotteries</div>
+        <div class="tab" data-tab="history">Lottery History</div>
+        <div class="tab" data-tab="how-it-works">How It Works</div>
+      </div>
+
+    <!-- Active Lotteries Tab -->
+    <div id="active-lotteries" class="tab-content active">
+      <div id="lottery-container">
+        <!-- Lotteries will be loaded here by JavaScript -->
+        <p>Loading lotteries...</p>
+      </div>
+    </div>
+
+    <!-- History Tab -->
+    <div id="history" class="tab-content">
+      <div class="section">
+        <h3>Recent Winners</h3>
+        <div id="history-container">
+          <!-- History will be loaded here by JavaScript -->
+          <p>Loading history...</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- How It Works Tab -->
+    <div id="how-it-works" class="tab-content">
+      <div class="section">
+        <h3>How The Lottery Works</h3>
+        
+        <p><b>Low-Roller Lottery:</b></p>
+        <ul>
+          <li>Prize: 0.5 7STAR</li>
+          <li>Entries: 7 participants</li>
+          <li>Entry fee: 0.08333 7STAR per entry</li>
+          <li>Total collected: 0.58333 7STAR (0.5 for prize, 0.08333 as fee)</li>
+        </ul>
+        
+        <p><b>High-Roller Lottery:</b></p>
+        <ul>
+          <li>Prize: 1 7STAR</li>
+          <li>Entries: 7 participants</li>
+          <li>Entry fee: 0.16667 7STAR per entry</li>
+          <li>Total collected: 1.16667 7STAR (1 for prize, 0.16667 as fee)</li>
+        </ul>
+        
+        <p><b>Prize Distribution:</b></p>
+        <ul>
+          <li>When a lottery is filled with 7 entries, a winner is randomly selected</li>
+          <li>Prize is sent directly to the winner's wallet</li>
+          <li>Entry fees are held in a program-controlled wallet until distribution</li>
+          <li>Winners are notified via Telegram</li>
+        </ul>
+        
+        <p><b>Random Selection:</b></p>
+        <p>Winners are selected randomly when all 7 entries are filled. Selection is transparent and verifiable on-chain.</p>
+
+        <p><b>Fees</b></p>
+        <p>Entry fees are used to fund the prize pool and cover transaction costs. A small portion will be allocated for StarCycle's Strategic 7STAR Reserve.</p>
+      </div>
+    </div>
+
+    <div class="back-button-container">
+      <a href="index.html" class="btn">Back to Home</a>
+    </div>
+  </div>
+
+  <!-- Add Solana Web3 library -->
+  <script src="https://unpkg.com/@solana/web3.js@latest/lib/index.iife.js"></script>
+  <!-- Add Solana Wallet Adapter -->
+  <script src="https://unpkg.com/@solana/wallet-adapter-base/lib/index.iife.js"></script>
+  <script src="https://unpkg.com/@solana/wallet-adapter-wallets/lib/index.iife.js"></script>
+  <!-- Load our custom JavaScript -->
+  <script src="js/lottery.js"></script>
+</body>
+</html>

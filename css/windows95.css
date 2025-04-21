@@ -1,0 +1,87 @@
+body {
+    background-color: #008080; /* Win95 teal background */
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+    color: #000;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  .container {
+    background-color: #c0c0c0; /* Win95 gray */
+    border: 2px solid #000;
+    padding: 10px;
+    width: 600px;
+    box-shadow: 2px 2px 0 #000, -2px -2px 0 #fff, 2px -2px 0 #000, -2px 2px 0 #000;
+  }
+  .title-bar {
+    background-color: #000080; /* Win95 navy blue title bar */
+    color: #fff;
+    padding: 5px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    text-align: center;
+  }
+  .section {
+    background-color: #fff;
+    border: 1px solid #000;
+    padding: 10px;
+    margin-bottom: 10px;
+  }
+  .btn {
+    background-color: #c0c0c0;
+    border: 2px outset #000;
+    color: #000080;
+    padding: 5px 10px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+    margin: 5px 0;
+    font-family: 'MS Sans Serif', Arial, sans-serif;
+    font-size: 12px;
+  }
+  .btn:active {
+    border-style: inset;
+  }
+  .btn:hover {
+    background-color: #d3d3d3; /* Lighter gray on hover */
+  }
+  .input-group {
+    margin-bottom: 8px;
+  }
+  .input-field {
+    width: 100%;
+    padding: 5px;
+    box-sizing: border-box;
+    font-family: 'MS Sans Serif', Arial;
+    border: 2px inset #000;
+    background: #fff;
+  }
+  .wallet-info {
+    background-color: #ffffcc; /* Light yellow */
+    border: 1px solid #000;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  .wallet-address {
+    font-family: monospace;
+    background-color: #fff;
+    border: 1px inset #000;
+    padding: 4px;
+    margin: 5px 0;
+    word-break: break-all;
+  }
+  .notification {
+    background-color: #ffffcc;
+    border: 1px solid #000;
+    padding: 8px;
+    margin: 10px 0;
+  }
+  .back-button-container {
+    text-align: center; /* Center the back button */
+    margin-top: 10px;
+  }
+  
